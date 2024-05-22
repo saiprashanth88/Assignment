@@ -77,7 +77,7 @@ background-color: burlywood;
 .weather_card {
     width: 400px;
     min-width: 200px;
-    background-color: #fff;
+    background-color: #81e3bf;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 1rem;
