@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
-import ParticlesBackground from "../ParticlesBackground";
+
 
 
 
@@ -102,7 +102,7 @@ const Main = () => {
                 </button>
             </nav>
             <div className={styles.red_background}>
-                <ParticlesBackground/>
+
             <div className={styles.user_info}>
                 <h3>Email: {user.email}</h3>
                 <h3>Last Login: {lastLogin ? new Date(lastLogin).toLocaleString() : "N/A"}</h3>
