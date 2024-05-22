@@ -1,0 +1,204 @@
+/* .main_container {
+
+background-color: burlywood;
+} */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    background-color: #3bb19b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.navbar h1 {
+    color: white;
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.white_btn {
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    background-color: white;
+    border-radius: 20px;
+    width: 120px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.user_info {
+    margin-top: 10px,0;
+    /* top: 10px; */
+    padding: 20px;
+}
+
+.user_info h2 {
+    margin: 10px 0;
+
+}
+
+.search_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.input_box {
+    padding: 0.5rem;
+    width: 20rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search_btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    border-radius: 4px;
+}
+
+.error_message {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.weather_card {
+    width: 400px;
+    min-width: 200px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: auto;
+    background-size: 435px;
+    background-repeat: no-repeat;
+}
+
+.weather_card.morning {
+    background-image: url("http://localhost:3000/morning.png");
+}
+
+.weather_card.afternoon {
+    background-image: url("http://localhost:3000/afternoon.png");
+}
+
+.weather_card.evening {
+    background-image: url("http://localhost:3000/evening.png");
+}
+
+.weather_card.night {
+    background-image: url("http://localhost:3000/night.png");
+}
+
+.card_title {
+    text-align: center;
+}
+
+.card_body {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.temp {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.feel, .weather, .minmax_temp {
+    margin: 0.5rem 0;
+}
+
+.accordion {
+    margin-top: 1rem;
+}
+
+.accordion_item {
+    border: none;
+}
+
+.accordion_header {
+    margin: 0;
+}
+
+.accordion_button {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    background-color: #b55757;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.accordion_button.collapsed {
+    background-color: #3bb19b;
+}
+
+.accordion_collapse {
+    border-top: 1px solid #b55757;
+}
+
+.accordion_body {
+    padding: 1rem;
+}
+
+.list_group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list_group_item {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.container {
+    background-color: #b55757;
+}
+
+.red_background {
+    position: absolute;
+    top: 10;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+    background-image: url('../assets/bg.png');
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+/*
+.red_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(237, 147, 147);
+    background-image: url('../assets/nature.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+} */

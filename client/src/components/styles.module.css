@@ -1,0 +1,120 @@
+.main_container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.white_btn {
+    background: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.user_info {
+    margin-bottom: 2rem;
+}
+
+.search_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input_box {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.search_btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error_message {
+    color: red;
+    margin-top: 1rem;
+}
+
+.weather_card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.card_title {
+    margin-bottom: 1rem;
+}
+
+.card_body {
+    margin-bottom: 1rem;
+}
+
+.temp {
+    font-size: 2rem;
+}
+
+.feel, .weather, .minmax_temp {
+    font-size: 1.2rem;
+}
+
+.accordion {
+    margin-top: 1rem;
+}
+
+.accordion_button {
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+}
+
+.accordion_collapse {
+    border-top: 1px solid #fff;
+}
+
+.accordion_body {
+    padding: 1rem;
+}
+
+.list_group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list_group_item {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
