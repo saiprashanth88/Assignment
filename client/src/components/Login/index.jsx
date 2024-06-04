@@ -14,7 +14,9 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "https://assignment-gic2.vercel.app/api/auth";
+			// const url = "http://localhost:8080/api/auth";
+			const url = `${process.env.REACT_APP_BACKEND_URL}/api/auth`;
+
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/";
