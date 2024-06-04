@@ -13,7 +13,9 @@ connection();
 app.use(express.json());
 app.use(cors(
     {
-        origin: "https://backend-tawny-eta.vercel.app/",
+        origin: ["https://backend-tawny-eta.vercel.app/"],
+        methods: ["POST","GET"],
+        credentials: true
 
     }
 ));
