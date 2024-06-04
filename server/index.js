@@ -12,11 +12,11 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(cors(
-    // {
-    //     origin: ["https://assignment-gic2.vercel.app/login"],
-    //     methods: ["POST", "GET"],
-    //     credentials:true
-    // }
+    {
+        origin: ["https://assignment-gic2.vercel.app/login"],
+        methods: ["POST", "GET"],
+        credentials:true
+    }
 ));
 
 // routes
