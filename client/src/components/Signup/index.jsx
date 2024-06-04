@@ -21,7 +21,8 @@ const Signup = () => {
 		e.preventDefault();
 		try {
 			// const url = "http://localhost:8080/api/users";
-			const url = `${process.env.REACT_APP_BACKEND_URL}/api/users`;
+			// const url = `${process.env.REACT_APP_BACKEND_URL}/api/users`;
+			const url = "https://backend-tawny-eta.vercel.app/api/users";
 
 			const { data: res } = await axios.post(url, data);
 			navigate("/login");
