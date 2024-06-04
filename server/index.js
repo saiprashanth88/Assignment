@@ -13,7 +13,7 @@ connection();
 app.use(express.json());
 app.use(cors(
     {
-        origin: ["https://backend-tawny-eta.vercel.app/"],
+        origin: ["https://assignment-gic2.vercel.app/login"],
         methods: ["POST","GET"],
         credentials: true
 
