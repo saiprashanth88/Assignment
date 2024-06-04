@@ -23,6 +23,7 @@ const Main = () => {
                 // const url = "http://localhost:8080/api/users/me";
                 const url = `${process.env.REACT_APP_BACKEND_URL}/api/users/me`;
 
+
                 const { data } = await axios.get(url, {
                     headers: { "x-auth-token": localStorage.getItem("token") }
                 });
