@@ -77,7 +77,7 @@ background-color: burlywood;
 .weather_card {
     width: 400px;
     min-width: 200px;
-    background-color: #81e3bf;
+    background-color: #f4f7f6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 1rem;
@@ -87,19 +87,19 @@ background-color: burlywood;
 }
 
 .weather_card.morning {
-    background-image: url("http://localhost:3000/assets/morning.png");
+    background-image: url("http://localhost:3000/morning.png");
 }
 
 .weather_card.afternoon {
-    background-image: url("http://localhost:3000/assets/afternoon.png");
+    background-image: url("http://localhost:3000/afternoon.png");
 }
 
 .weather_card.evening {
-    background-image: url("http://localhost:3000/assets/evening.png");
+    background-image: url("http://localhost:3000/evening.png");
 }
 
 .weather_card.night {
-    background-image: url("http://localhost:3000/assets/night.png");
+    background-image: url("http://localhost:3000/night.png");
 }
 
 .card_title {

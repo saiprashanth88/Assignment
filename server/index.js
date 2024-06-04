@@ -13,9 +13,9 @@ connection();
 app.use(express.json());
 app.use(cors(
     {
-        origin: ["https://assignment-gic2.vercel.app/"],
+        origin: ["https://assignment-gic2.vercel.app/login"],
         methods: ["POST", "GET"],
-        credentials: true
+        credentials:true
     }
 ));
 
@@ -23,5 +23,5 @@ app.use(cors(
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));
