@@ -13,7 +13,7 @@ connection();
 app.use(express.json());
 app.use(cors(
     {
-        origin: ["https://assignment-gic2.vercel.app/login"],
+        origin: ["https://assignment-gic2.vercel.app/"],
         methods: ["POST","GET"],
         credentials: true
 
