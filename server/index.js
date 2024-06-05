@@ -27,7 +27,7 @@ app.use(express.json());
 //     next();
 // });
 app.use(cors({
-    origin: 'https://assignment-gic2.vercel.app',
+    origin: 'https://assignment-gic2.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include all the methods your API supports
     allowedHeaders: ['Content-Type', 'Authorization'], // Include any additional headers your API expects
     credentials: true, // Allow credentials (cookies, authorization headers, etc.) to be sent with the requests
