@@ -19,8 +19,7 @@ const corsOptions = {
   optionsSuccessStatus: 200 // For legacy browser support
 };
 
-// Middleware
-app.use(express.json());
+// Use CORS middleware with defined options
 app.use(cors(corsOptions));
 
 // Middleware to set additional headers and handle preflight requests
@@ -39,6 +38,9 @@ app.use((req, res, next) => {
 
   next();
 });
+
+// Middleware to parse JSON bodies
+app.use(express.json());
 
 // Routes
 app.use("/api/users", userRoutes);
