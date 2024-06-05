@@ -1,40 +1,51 @@
 require("dotenv").config();
 const express = require("express");
-const app = express();
 const cors = require("cors");
 const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 
-// database connection
+const app = express();
+
+// Database connection
 connection();
 
-// middlewares
-app.use(express.json());
-// app.use(cors(
-//     {
-//         origin: ["https://assignment-gic2.vercel.app/"],
-//         methods: ["POST","GET"],
-//         credentials: true
+// CORS options
+const corsOptions = {
+  origin: 'https://assignment-gic2.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+  credentials: true,
+  optionsSuccessStatus: 200 // For legacy browser support
+};
 
-//     }
-// ));
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', 'https://assignment-gic2.vercel.app');
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-//     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-//     res.setHeader('Access-Control-Allow-Credentials', 'true');
-//     next();
-// });
-app.use(cors({
-    origin: 'https://assignment-gic2.vercel.app/',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include all the methods your API supports
-    allowedHeaders: ['Content-Type', 'Authorization'], // Include any additional headers your API expects
-    credentials: true, // Allow credentials (cookies, authorization headers, etc.) to be sent with the requests
-}));
-// routes
+// Middleware
+app.use(express.json());
+app.use(cors(corsOptions));
+
+// Middleware to set additional headers and handle preflight requests
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://assignment-gic2.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
+
+  // Add any custom headers if necessary
+  res.header('X-Custom-Header', 'your-value-here');
+
+  // Handle preflight (OPTIONS) requests
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
+// Routes
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
+// Start the server
 const port = process.env.PORT || 4000;
-app.listen(port, console.log(`Listening on port ${port}...`));
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
+});
