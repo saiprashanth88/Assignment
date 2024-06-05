@@ -87,19 +87,19 @@ background-color: burlywood;
 }
 
 .weather_card.morning {
-    background-image: url("http://localhost:3000/morning.png");
+    background-image: url("../assets/morning.png");
 }
 
 .weather_card.afternoon {
-    background-image: url("http://localhost:3000/afternoon.png");
+    background-image: url("../assets/afternoon.png");
 }
 
 .weather_card.evening {
-    background-image: url("http://localhost:3000/evening.png");
+    background-image: url("../assets/evening.png");
 }
 
 .weather_card.night {
-    background-image: url("http://localhost:3000/night.png");
+    background-image: url("../assets/night.png");
 }
 
 .card_title {
