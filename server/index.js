@@ -12,10 +12,12 @@ connection();
 
 // CORS options
 const corsOptions = {
-  origin: 'https://assignment-gic2.vercel.app',
+  origin: ['https://assignment-gic2.vercel.app',true,"*"],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
   credentials: true,
+  crossOriginIsolated: true,
+
   optionsSuccessStatus: 200 // For legacy browser support
 };
 
