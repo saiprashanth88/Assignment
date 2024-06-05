@@ -17,6 +17,7 @@ const Main = () => {
     const [showMoreInfo, setShowMoreInfo] = useState(false);
     const [timeOfDay, setTimeOfDay] = useState("");
 
+
     useEffect(() => {
         const fetchUserData = async () => {
             try {
