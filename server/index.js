@@ -12,7 +12,7 @@ connection();
 
 // CORS options
 const corsOptions = {
-  origin: ['https://assignment-gic2.vercel.app/login'],
+  origin: ['https://assignment-gic2.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin','x-auth-token'],
   credentials: true,
@@ -23,7 +23,9 @@ const corsOptions = {
 };
 
 // Use CORS middleware with defined options
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions));
 // app.use(cors());
 // Middleware to set additional headers and handle preflight requests
 // app.use((req, res, next) => {
