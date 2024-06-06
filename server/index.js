@@ -12,7 +12,7 @@ connection();
 
 // CORS options
 const corsOptions = {
-  origin: ['https://assignment-gic2.vercel.app/'],
+  origin: ['https://frontend-1yvz.onrender.com/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
   credentials: true,
@@ -27,7 +27,7 @@ app.use(cors(corsOptions));
 
 // Middleware to set additional headers and handle preflight requests
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://assignment-gic2.vercel.app');
+  res.header('Access-Control-Allow-Origin', 'https://frontend-1yvz.onrender.com/');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
 
