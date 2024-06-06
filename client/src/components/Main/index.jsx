@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
-import ParticlesBackground from "../ParticlesBackground";
+
 
 
 
@@ -17,10 +17,14 @@ const Main = () => {
     const [showMoreInfo, setShowMoreInfo] = useState(false);
     const [timeOfDay, setTimeOfDay] = useState("");
 
+
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const url = "http://localhost:8080/api/users/me";
+                // const url = "http://localhost:8080/api/users/me";
+                // const url = `${process.env.REACT_APP_BACKEND_URL}/api/users/me`;
+                const url = "https://backend-tawny-eta.vercel.app/api/user/me";
+
                 const { data } = await axios.get(url, {
                     headers: { "x-auth-token": localStorage.getItem("token") }
                 });
@@ -102,7 +106,7 @@ const Main = () => {
                 </button>
             </nav>
             <div className={styles.red_background}>
-                <ParticlesBackground/>
+
             <div className={styles.user_info}>
                 <h3>Email: {user.email}</h3>
                 <h3>Last Login: {lastLogin ? new Date(lastLogin).toLocaleString() : "N/A"}</h3>
