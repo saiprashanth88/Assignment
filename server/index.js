@@ -13,6 +13,7 @@ connection();
 // CORS options
 const corsOptions = {
   origin: ['https://assignment-gic2.vercel.app'],
+  // origin:['http://localhost:3000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin','x-auth-token'],
   credentials: true,
@@ -25,23 +26,24 @@ const corsOptions = {
 // Use CORS middleware with defined options
 // app.use(cors(corsOptions));
 
-app.options('*', cors(corsOptions));
+app.options(cors(corsOptions));
 // app.use(cors());
 // Middleware to set additional headers and handle preflight requests
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
+app.use((req, res, next) => {
+  // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Origin', 'https://assignment-gic2.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin, x-auth-token');
 
 
-//   res.header('X-Custom-Header', '<!doctype html>');
+  res.header('X-Custom-Header', '<!doctype html>');
 
-//   if (req.method === 'OPTIONS') {
-//     return res.sendStatus(200);
-//   }
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
 
-//   next();
-// });
+  next();
+});
 
 // Middleware to parse JSON bodies
 app.use(express.json());
