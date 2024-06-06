@@ -12,9 +12,9 @@ connection();
 
 // CORS options
 const corsOptions = {
-  origin: ['https://assignment-gic2.vercel.app/'],
+  origin: ['https://assignment-gic2.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin','x-auth-token'],
   credentials: true,
   crossOriginIsolated: true,
 
@@ -24,23 +24,22 @@ const corsOptions = {
 
 // Use CORS middleware with defined options
 app.use(cors(corsOptions));
-
+// app.use(cors());
 // Middleware to set additional headers and handle preflight requests
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://assignment-gic2.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
 
-  // Add any custom headers if necessary
-  res.header('X-Custom-Header', '<!doctype html>');
 
-  // Handle preflight (OPTIONS) requests
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(200);
-  }
+//   res.header('X-Custom-Header', '<!doctype html>');
 
-  next();
-});
+//   if (req.method === 'OPTIONS') {
+//     return res.sendStatus(200);
+//   }
+
+//   next();
+// });
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -50,7 +49,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
 // Start the server
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });
