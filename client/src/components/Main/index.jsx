@@ -23,8 +23,8 @@ const Main = () => {
             try {
                 // const url = "http://localhost:8080/api/users/me";
                 // const url = `${process.env.REACT_APP_BACKEND_URL}/api/users/me`;
-                // const url = "https://backend-tawny-eta.vercel.app/api/user/me";
-                const url = "https://backend-6hf1.onrender.com/api/user/me";
+                const url = "https://backend-tawny-eta.vercel.app/api/user/me";
+                // const url = "https://backend-6hf1.onrender.com/api/user/me";
 
                 const { data } = await axios.get(url, {
                     headers: { "x-auth-token": localStorage.getItem("token") }
