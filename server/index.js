@@ -18,6 +18,7 @@ const corsOptions = {
   credentials: true,
   crossOriginIsolated: true,
 
+
   optionsSuccessStatus: 200 // For legacy browser support
 };
 
