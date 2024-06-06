@@ -12,7 +12,7 @@ connection();
 
 // CORS options
 const corsOptions = {
-  origin: ['https://assignment-gic2.vercel.app',true,"*"],
+  origin: ['https://assignment-gic2.vercel.app/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
   credentials: true,
@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
 
   // Add any custom headers if necessary
-  res.header('X-Custom-Header', 'your-value-here');
+  res.header('X-Custom-Header', '<!doctype html>');
 
   // Handle preflight (OPTIONS) requests
   if (req.method === 'OPTIONS') {
